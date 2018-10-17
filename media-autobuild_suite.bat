@@ -1536,7 +1536,7 @@ title MABSbat
 for /f "tokens=2" %%P in ('tasklist /v ^|findstr MABSbat') do set ourPID=%%P
 
 if exist %build%\compile.log del %build%\compile.log
-start /I %instdir%\%msys2%\usr\bin\mintty.exe -i /msys2.ico -t "media-autobuild_suite" ^
+start /I /WAIT %instdir%\%msys2%\usr\bin\mintty.exe -i /msys2.ico -t "media-autobuild_suite" ^
 --log 2>&1 %build%\compile.log /bin/env MSYSTEM=%MSYSTEM% MSYS2_PATH_TYPE=inherit /usr/bin/bash --login ^
 /build/media-suite_compile.sh --cpuCount=%cpuCount% --build32=%build32% --build64=%build64% --deleteSource=%deleteSource% ^
 --mp4box=%mp4box% --vpx=%vpx2% --x264=%x2643% --x265=%x2652% --other265=%other265% --flac=%flac% --fdkaac=%fdkaac% ^
