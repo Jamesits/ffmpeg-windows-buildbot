@@ -55,7 +55,7 @@ if [[ "$update" = "yes" ]]; then
             echo "Suite up-to-date."
             echo "If you had an issue, please report it in GitHub."
         fi
-        read -r -t 15 -p '<Enter> to close' ret
+        #read -r -t 15 -p '<Enter> to close' ret
     fi
 fi # end suite update
 
@@ -118,7 +118,8 @@ if [[ -f /etc/pac-base.pk ]] && [[ -f /etc/pac-mingw.pk ]]; then
         echo "Remove:"
         echo "$uninstall"
         while true; do
-            read -r -p "remove packs [y/n]? " yn
+            #read -r -p "remove packs [y/n]? " yn
+            yn=y
             case $yn in
                 [Yy]* )
                     for pkg in $uninstall; do
@@ -141,7 +142,8 @@ if [[ -f /etc/pac-base.pk ]] && [[ -f /etc/pac-mingw.pk ]]; then
         echo "Install:"
         echo "$install"
         while true; do
-            read -r -p "install packs [y/n]? " yn
+            #read -r -p "install packs [y/n]? " yn
+            yn=y
             case $yn in
                 [Yy]* )
                     echo $install | xargs $nargs pacman -Sw --noconfirm --ask 20 --needed
