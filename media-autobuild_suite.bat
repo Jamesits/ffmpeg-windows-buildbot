@@ -1489,9 +1489,8 @@ if [%removefstab%]==[yes] (
 
 :update
 if exist %build%\update.log del %build%\update.log
-%mintty% -t "update autobuild suite" --log 2>&1 %build%\update.log ^
-/usr/bin/bash -l /build/media-suite_update.sh --build32=%build32% --build64=%build64%
-type %build%\update.log
+REM %mintty% -t "update autobuild suite" --log 2>&1 %build%\update.log ^
+REM /usr/bin/bash -l /build/media-suite_update.sh --build32=%build32% --build64=%build64%
 
 if exist "%build%\update_core" (
     echo.-------------------------------------------------------------------------------
