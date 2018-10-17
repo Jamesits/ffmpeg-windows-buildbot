@@ -20,8 +20,8 @@
 ::    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ::-----------------------------------------------------------------------------
 
-@echo off
-color 80
+::@echo off
+::color 80
 title media-autobuild_suite
 
 setlocal
